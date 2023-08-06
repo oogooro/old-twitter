@@ -52,5 +52,6 @@ const titleObserver = new MutationObserver((mutationList) => {
 
 waitForElement('title').then(title => titleObserver.observe(title, { childList: true, }));
 
+// Change "Tweet" buttons
 waitForElement('[data-testid="tweetButtonInline"]>div>span>span').then(element => element.innerText = 'Tweet');
 waitForElement('[data-testid="SideNav_NewTweet_Button"]>div>span>div>div>span>span').then(element => element.innerText = 'Tweet');
