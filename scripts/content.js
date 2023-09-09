@@ -45,6 +45,7 @@ const titleObserver = new MutationObserver((mutationList) => {
       if (mutation.addedNodes.forEach(node => {
         const title = document.querySelector('title');
         if (node.textContent.endsWith('X')) title.innerText = title.innerText.slice(0, -1) + 'Twitter';
+        if (node.textContent.includes(' on X: ')) title.innerText = title.innerText.replace(' on X: ', ' on Twitter: ');
       }));
     }
   }
